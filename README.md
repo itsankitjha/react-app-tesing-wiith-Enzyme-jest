@@ -24,3 +24,26 @@ The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+
+-------------------------------------------------------------------------
+
+1. Installation
+Let’s start by installing all the necessary libraries. Open the application and console using yarn or npm to install Jest, Enzyme, and some additional plugins.
+
+If you created your app with create-react-app you don’t have to install Jest, it’s already there.
+
+### yarn add enzyme enzyme-adapter-react-16 react-test-renderer
+yarn add enzyme-to-json
+If you don’t have Jest in your project yet you can install it with the following command:
+
+### yarn add jest
+When it’s ready, we can open the application code and start setting up the testing environment.
+
+2. Setting test file
+Please open the setupTest.js file, where we will need to configure the adapter to use Enzyme in the Jest environment properly.
+
+import { configure } from "enzyme";
+import Adapter from "enzyme-adapter-react-16";
+configure({ adapter: new Adapter() });
+When that’s ready and saved, the next step will be to think about test cases.
